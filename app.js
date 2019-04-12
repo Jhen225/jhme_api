@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
@@ -9,7 +10,7 @@ const PORT = process.env.PORT || 4000;
 // Application Middleware
 
 
-mongoose.connect('mongodb://localhost/jhme', { useNewUrlParser: true })
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
 
 const db = mongoose.connection;
 
